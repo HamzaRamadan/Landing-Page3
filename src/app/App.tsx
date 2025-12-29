@@ -10,10 +10,16 @@ import { LeadFormSection } from './components/LeadFormSection';
 import { EquipmentSection } from './components/EquipmentSection';
 import { FloatingCallButton } from './components/FloatingCallButton';
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Analytics } from './components/Analytics';
 
 export default function App() {
   return (
     <div className="min-h-screen" style={{ fontFamily: 'Cairo, sans-serif' }} dir="rtl" lang="ar">
+        <Analytics 
+        gtmId="GTM-TTKN9LJN"
+        fbPixelId=""
+        clarityId=""
+      />
       <HeroSection />
       <PainPointsSection />
       <SolutionsSection />
