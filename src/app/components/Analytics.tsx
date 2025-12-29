@@ -28,7 +28,7 @@ export function Analytics({ gtmId, fbPixelId, clarityId }: AnalyticsProps) {
       console.log('✅ GTM loaded:', gtmId);
     }
 
- // ===================== Facebook Pixel =====================
+// ===================== Facebook Pixel =====================
 if (fbPixelId && !document.getElementById('fb-pixel-script')) {
   const fbScript = document.createElement('script');
   fbScript.id = 'fb-pixel-script';
@@ -36,6 +36,7 @@ if (fbPixelId && !document.getElementById('fb-pixel-script')) {
   fbScript.src = 'https://connect.facebook.net/en_US/fbevents.js';
   document.head.appendChild(fbScript);
 
+  // هنا بنستنى السكربت يكمّل تحميله
   fbScript.onload = () => {
     const w = window as any;
 
@@ -51,12 +52,14 @@ if (fbPixelId && !document.getElementById('fb-pixel-script')) {
       w.fbq.queue = [];
     }
 
+    // تهيئة Pixel بعد تحميل السكربت
     w.fbq('init', fbPixelId);
     w.fbq('track', 'PageView');
 
     console.log('✅ Facebook Pixel loaded:', fbPixelId);
   };
 }
+
 
     // ===================== Microsoft Clarity =====================
     if (clarityId && !(window as any).clarity) {
