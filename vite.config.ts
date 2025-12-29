@@ -23,13 +23,13 @@ export default defineConfig({
     minify: 'terser',
     chunkSizeWarningLimit: 1000,
   },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://script.google.com/macros/s/AKfycbxZNtkuvnSmRHoWMEOC4-jQNSGwdUNUjN44rt5wdbuTDAZF-9v9JTKlX7AyZlILpnOz/exec',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-      },
-    },
-  },
+  // server: {
+  //   proxy: {
+  //     '/api': {
+  //       target: 'https://script.google.com/macros/s/AKfycbxZNtkuvnSmRHoWMEOC4-jQNSGwdUNUjN44rt5wdbuTDAZF-9v9JTKlX7AyZlILpnOz/exec',
+  //       changeOrigin: true,
+  //       rewrite: (path) => path.replace(/^\/api/, ''),
+  //     },
+  //   },
+  // },
 })
