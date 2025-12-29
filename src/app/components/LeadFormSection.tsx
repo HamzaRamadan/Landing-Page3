@@ -23,7 +23,7 @@ const onSubmit = async (data: FormData) => {
 
   const API_URL = import.meta.env.PROD
     ? '/api'
-    : 'https://script.google.com/macros/s/AKfycbyxXi9DFanPapshwBGM0ByydLMkqreA0rkq75DAcc18ENUgCZweK9tVObeHEj-AkMLPKw/exec';
+    : 'https://script.google.com/macros/s/AKfycbxfOOI6fa5MCTnG5zH8z4vuHBEA1oZwyJ6jSn4kZunZ8iThwRZajS41I7FO9aKewz5qJw/exec';
 
   try {
     // كل القيم تتحول لنص قبل الإرسال
