@@ -17,8 +17,8 @@ export default function App() {
     <div className="min-h-screen" style={{ fontFamily: 'Cairo, sans-serif' }} dir="rtl" lang="ar">
         <Analytics 
         gtmId="GTM-TTKN9LJN"
-        fbPixelId=""
-        clarityId=""
+        fbPixelId="469510950309710"
+        clarityId="uta1bzf6ho"
       />
       <HeroSection />
       <PainPointsSection />
