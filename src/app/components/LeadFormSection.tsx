@@ -26,15 +26,21 @@ const onSubmit = async (data: FormData) => {
     : 'https://script.google.com/macros/s/AKfycbw864rZLZkjjsZnuikVR0SyHuJ0uq1rSWfEta6CJGg7LMAjJiASuZpmvTCB47ctZKaopQ/exec';
 
   try {
+    // كل القيم تتحول لنص قبل الإرسال
+    const payload = {
+      name: String(data.name || ''),
+      phone: String(data.phone || ''),
+      companyName: String(data.companyName || 'غير محدد'),
+      requirements: String(data.requirements || ''),
+      hasDrawings: String(data.hasDrawings || ''),
+      projectType: String(data.projectType || 'غير محدد'),
+      timestamp: String(new Date().toLocaleString('ar-EG', { timeZone: 'Africa/Cairo' }))
+    };
+
     const response = await fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        ...data,
-        companyName: data.companyName || 'غير محدد',
-        projectType: data.projectType || 'غير محدد',
-        timestamp: new Date().toLocaleString('ar-EG', { timeZone: 'Africa/Cairo' }),
-      }),
+      body: JSON.stringify(payload)
     });
 
     if (response.ok) {
