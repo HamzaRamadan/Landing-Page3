@@ -23,7 +23,7 @@ const onSubmit = async (data: FormData) => {
 
   const API_URL = import.meta.env.PROD
     ? '/api'
-    : 'https://script.google.com/macros/s/AKfycbzmoGDoM_cvP3Kk62pc4JgTgPqm1kFA1XpFzrq3UV_jGvSUoi-uuM1DRppomrdWCzDWYw/exec';
+    : 'https://script.google.com/macros/s/AKfycbw864rZLZkjjsZnuikVR0SyHuJ0uq1rSWfEta6CJGg7LMAjJiASuZpmvTCB47ctZKaopQ/exec';
 
   try {
     const response = await fetch(API_URL, {
